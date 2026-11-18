@@ -29,6 +29,12 @@ function createItem(item) {
 
     textElement.textContent = item;
 
+    deleteButton.addEventListener("click", () => {
+        clone.remove();
+        const items = getTasksFromDOM();
+        saveTasks(items);
+    });
+
     return clone;
 }
 
